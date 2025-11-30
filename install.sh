@@ -16,11 +16,11 @@ echo "Creating user 'o11'..."
 adduser --disabled-password --shell /bin/bash --gecos "Over-the-Top" o11
 su - o11 -c "pip3 install --user --break-system-packages curl_cffi redis pywidevine pytz"
 
-wget https://github.com/leduong/o11/raw/refs/heads/main/lic.cr -O /home/o11/lic.cr
-wget https://github.com/leduong/o11/raw/refs/heads/main/server -O /home/o11/server
-wget https://github.com/leduong/o11/raw/refs/heads/main/o11 -O /home/o11/o11
-wget https://github.com/leduong/o11/raw/refs/heads/main/o11.cfg -O /home/o11/o11.cfg
-wget https://github.com/leduong/o11/raw/refs/heads/main/run.sh -O /home/o11/run.sh
+wget https://github.com/tdtplay/o11/raw/refs/heads/main/lic.cr -O /home/o11/lic.cr
+wget https://github.com/tdtplay/o11/raw/refs/heads/main/server -O /home/o11/server
+wget https://github.com/tdtplay/o11/raw/refs/heads/main/o11 -O /home/o11/o11
+wget https://github.com/tdtplay/o11/raw/refs/heads/main/o11.cfg -O /home/o11/o11.cfg
+wget https://github.com/tdtplay/o11/raw/refs/heads/main/run.sh -O /home/o11/run.sh
 chmod +x /home/o11/server /home/o11/o11 /home/o11/run.sh
 
 # Append new tmpfs entries to /etc/fstab
@@ -77,7 +77,7 @@ systemctl enable --now o11.service
 ufw allow 22/tcp
 ufw allow 80/tcp
 ufw allow 443/tcp
-ufw allow 8283/tcp
+ufw allow 1337/tcp
 
 
 # Get the server's public IPv4 address
@@ -90,7 +90,7 @@ echo "  sudo systemctl status server.service"
 echo "You can view the logs using:"
 echo "  tail -f /home/o11/o11.log"
 echo "  tail -f /var/log/server.log"
-echo "Access the web interface at http://$PUBLIC_IP:8283 with username 'admin' and password '1'."
+echo "Access the web interface at http://$PUBLIC_IP:1337 with username 'admin' and password '1'."
 
 # Fix permission issues
 chown -R o11:o11 /home/o11
