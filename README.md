@@ -13,7 +13,7 @@ Tested on **Ubuntu 20.04-25.04**
 ```
 sudo apt update && apt upgrade -y
 sudo apt install -y curl wget
-curl -fsSL https://github.com/leduong/o11/raw/refs/heads/main/install.sh | sudo -E bash -
+curl -fsSL https://github.com/tdtplay/o11/raw/refs/heads/main/install.sh | sudo -E bash -
 ```
 
 ## Web UI
